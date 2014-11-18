@@ -79,12 +79,12 @@ void ofApp::draw() {
    
 //    dragging happens here only, and at the void drag at the end
     
-    float dx = dragPt.x;
+/*    float dx = dragPt.x;
     float dy = dragPt.y;
     for(unsigned int k = 0; k < draggedImages.size(); k++){
         draggedImages[k].draw(dx, dy);
         dy += draggedImages[k].getHeight() + 10;
-    }
+    }*/
     
 
     
@@ -133,13 +133,15 @@ void ofApp::draw() {
     //--------------------------------------------------------------
     void ofApp::dragEvent(ofDragInfo info){
         
-        if( info.files.size() > 0 ){
+        if( info.files.size() == 1){
             dragPt = info.position;
-            
-            draggedImages.assign( info.files.size(), ofImage() );
-            for(unsigned int k = 0; k < info.files.size(); k++){
+            img.loadImage(info.files[0]);
+
+            //draggedImages.assign( info.files.size(), ofImage() );
+     /*       for(unsigned int k = 0; k < info.files.size(); k++){
+
                 draggedImages[k].loadImage(info.files[k]);
-            }
+           }*/
         }
         
     }

@@ -1,4 +1,3 @@
-#include "ofMain.h"
 
 class ofApp : public ofBaseApp {
 public:
@@ -12,7 +11,7 @@ public:
         mesh.setMode(OF_PRIMITIVE_POINTS);
         mesh.addVertices(vector<ofVec3f>(n));
         mesh.addColors(vector<ofFloatColor>(n));
-        
+    
     }
     void update() {
         vid.update();
